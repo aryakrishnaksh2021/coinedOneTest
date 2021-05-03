@@ -73,7 +73,7 @@ export default function MenuListComposition() {
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={handleToggle}
-                    style={{ color: '#fff'}}
+                    style={{ color: '#000'}}
                 aria-label="delete">
                     <MoreHorizIcon />
                 </IconButton>

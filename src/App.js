@@ -11,7 +11,27 @@ function App() {
   const darkTheme = createMuiTheme({
     palette: {
       type: palletType,
-    }
+      primary: {
+        main: darkState ? '#fff' : '#3076de'
+      },
+      background :{ 
+        default: darkState ? '#303030' : '#feefdd'
+      }
+      // darkState?
+      
+      //  type: "dark",
+      //   primary: red,
+      //   secondary: {
+      //     main: '#b9f6ca',
+      //   }, :
+      //   type: "dark",
+      //   primary: red,
+      //   secondary: {
+      //     main: '#b9f6ca',
+      //   },
+      
+    },
+   
   });
   const handleThemeChange = () => {
     setDarkState(!darkState);
@@ -19,7 +39,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar checked={darkState} handleThemeChange={handleThemeChange} />
+      <AppBar checked={darkState} handleThemeChange={handleThemeChange} style={{backgroundColor:'#f00'}}/>
       {/* <Switch checked={darkState} onChange={handleThemeChange} /> */}
     </ThemeProvider>
   );

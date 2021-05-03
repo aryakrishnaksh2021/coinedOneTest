@@ -27,18 +27,18 @@ export default function AlertDialogSlide(props) {
         setOpen(false);
     };
     const [selectedValue, setSelectedValue] = React.useState('all');
-    const [selectedLabel, setSelectedLabel] = React.useState('All');
+    // const [selectedLabel, setSelectedLabel] = React.useState('All');
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
         setOpen(false); 
-        setSelectedLabel(event.target.ariaLabel)
+        props.setSelectedLabel(event.target.ariaLabel)
         props.setSelectedTime((event.target.value))
     };
     return (
         <div>
             <Button variant="outlined" color="primary" onClick={handleClickOpen} style={{borderRadius:'50rem'}}>
-                {selectedLabel} <ArrowDropDownIcon/>
+                {props.selectedLabel} <ArrowDropDownIcon/>
             </Button>
             <Dialog
                 open={open}
@@ -66,7 +66,7 @@ export default function AlertDialogSlide(props) {
                                 onChange={handleChange}
                                 value="all"
                                 name="radio-button-demo"
-                                inputProps={{ 'aria-label': 'ALL' }}
+                                inputProps={{ 'aria-label': 'All-screen-time' }}
                             />
                         </Grid>                            
                        
@@ -83,9 +83,9 @@ export default function AlertDialogSlide(props) {
                         </Grid>
                         <Grid item xs={1}>
                             <Radio
-                                checked={selectedValue === 'class time'}
+                                checked={selectedValue === 'classTime'}
                                 onChange={handleChange}
-                                value="class time"
+                                value="classTime"
                                 name="radio-button-demo"
                                 inputProps={{ 'aria-label': 'Class Time Only' }}
                             />
@@ -103,9 +103,9 @@ export default function AlertDialogSlide(props) {
                         </Grid>
                         <Grid item xs={1}>
                             <Radio
-                                checked={selectedValue === 'study time'}
+                                checked={selectedValue === 'studyTime'}
                                 onChange={handleChange}
-                                value="study time"
+                                value="studyTime"
                                 name="radio-button-demo"
                                 inputProps={{ 'aria-label': 'Study Time Only' }}
                             />
@@ -123,9 +123,9 @@ export default function AlertDialogSlide(props) {
                         </Grid>
                         <Grid item xs={1}>
                             <Radio
-                                checked={selectedValue === 'free time'}
+                                checked={selectedValue === 'freeTime'}
                                 onChange={handleChange}
-                                value="free time"
+                                value="freeTime"
                                 name="radio-button-demo"
                                 inputProps={{ 'aria-label': 'Free Time Only' }}
                             />

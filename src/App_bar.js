@@ -42,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
     },
+    appBar:{
+    backgroundColor: 'rgb(255, 255, 255)',
+    backgroundImage: 'linear-gradient(90deg, rgba(48, 118, 222, 0.4) 0%, rgba(241, 108, 11, 0.13) 100%)',
+    color:'#000'
+    }
 }));
 
 function ScrollTop(props) {
@@ -94,34 +99,31 @@ export default function BackToTop(props) {
     return (
         <React.Fragment>
             <CssBaseline />
-            <AppBar>
+            <AppBar className={classes.appBar}  style={{}}>
                 <Toolbar>
-                    
 
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <AccountCircleIcon />
                     </IconButton>
+
                     <Typography variant="h6" className={classes.title}>
                         Aditya Prasad
-                </Typography>
+                    </Typography>
+
                     <Hidden smDown>
                         <Button variant="contained" spacing={3}
                             color="default" startIcon={<PhoneIphoneIcon />}>Add Device</Button>
-                    </Hidden>
-                    
+                    </Hidden>                    
 
                     <Box mx={1}>
-                        <IconButton aria-label="darkmode" onClick={changeMode}>
-                            {darkStateIcon ? <Brightness7Icon /> : <Brightness4Icon style={{ color: '#fff' }} />}
+                        <IconButton aria-label="darkmode" onClick={changeMode} style={{ color: '#000' }}>
+                            {darkStateIcon ? <Brightness7Icon /> : <Brightness4Icon />}
                         </IconButton>
                     </Box>
-
                     
                     <Box mx={2}>
                         <Menu/>
-                    </Box>
-
-                   
+                    </Box>                  
                    
                 </Toolbar>
             </AppBar>
